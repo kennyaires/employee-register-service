@@ -127,3 +127,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'core.User'
+
+
+# Microservices URLS
+
+ADDRESS_SERVICE_URL = 'http://viacep.com.br/ws/'
+ADDRESS_SERVICE_AUTH_TOKEN =  os.environ.get('ADDRESS-SERVICE-AUTH-TOKEN')

@@ -7,7 +7,6 @@ from rest_framework import status
 
 
 CREATE_EMPLOYEE_URL = reverse('employee:create')
-TOKEN_URL = reverse('employee:token')
 
 
 def create_employee(**params):
@@ -26,7 +25,7 @@ class PublicEmployeeApiTests(TestCase):
             'email': 'joaosilva@host.com.br',
             'password': 'senhateste',
             'name': 'João Silva',
-            'postal_code': '09780-250'
+            'postal_code': '09780-250',
         }
 
         res = self.client.post(CREATE_EMPLOYEE_URL, payload)
@@ -42,6 +41,7 @@ class PublicEmployeeApiTests(TestCase):
             'email': 'joaosilva@host.com.br',
             'password': 'senhateste',
             'name': 'João Silva',
+            'postal_code': '09780-250',
         }
         create_employee(**payload)
 

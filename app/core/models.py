@@ -13,7 +13,7 @@ class UserManager(BaseUserManager):
         if not postal_code:
             raise ValueError('Users must have a postal code')
 
-        # TODO: Calls microservice api
+        # Calls microservice api
         postal_code = self.normalize_postal_code(postal_code)
         address_data = get_full_address(postal_code)
         user = self.model(
