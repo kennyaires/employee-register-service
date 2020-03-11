@@ -8,8 +8,15 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ('email', 'password', 'name')
-        extra_kwargs = {'password': {'write_only': True, 'min_length': 5}}
+        fields = ('email', 'password', 'name', 'postal_code',
+                  'address', 'neighborhood', 'city', 'state')
+        extra_kwargs = {
+            'password': {'write_only': True, 'min_length': 5},
+            'address': {'read_only': True},
+            'neighborhood': {'read_only': True},
+            'city': {'read_only': True},
+            'state': {'read_only': True},
+        }
 
     def create(self, validated_data):
         """Create a new user with encrypted password and return it"""

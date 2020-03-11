@@ -25,7 +25,8 @@ class PublicEmployeeApiTests(TestCase):
         payload = {
             'email': 'joaosilva@host.com.br',
             'password': 'senhateste',
-            'name': 'João Silva'
+            'name': 'João Silva',
+            'postal_code': '09780-250'
         }
 
         res = self.client.post(CREATE_EMPLOYEE_URL, payload)
@@ -54,6 +55,7 @@ class PublicEmployeeApiTests(TestCase):
             'email': 'joaosilva@host.com.br',
             'password': 'se',
             'name': 'João Silva',
+            'postal_code': '09780-250',
         }
         res = self.client.post(CREATE_EMPLOYEE_URL, payload)
 
