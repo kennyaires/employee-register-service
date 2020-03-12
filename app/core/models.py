@@ -19,10 +19,10 @@ class UserManager(BaseUserManager):
         user = self.model(
                         email=self.normalize_email(email),
                         postal_code=postal_code,
-                        address=address_data.get('logradouro', ''),
-                        neighborhood=address_data.get('bairro', ''),
-                        city=address_data.get('localidade', ''),
-                        state=address_data.get('uf', ''),
+                        address=address_data.get('address', ''),
+                        neighborhood=address_data.get('neighborhood', ''),
+                        city=address_data.get('city', ''),
+                        state=address_data.get('state', ''),
                         **extra_fields
                         )
         user.set_password(password)
