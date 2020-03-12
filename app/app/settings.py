@@ -131,5 +131,5 @@ AUTH_USER_MODEL = 'core.User'
 
 # Microservices URLS
 
-ADDRESS_SERVICE_URL = 'http://localhost:5000/api/get-full-address'
-ADDRESS_SERVICE_AUTH_TOKEN =  os.environ.get('ADDRESS-SERVICE-AUTH-TOKEN')
+ADDRESS_SERVICE_URL = 'https://get-full-address-microservice.herokuapp.com/api/get-full-address'
+ADDRESS_SERVICE_AUTH_TOKEN =  os.environ.get('ADDRESS_SERVICE_AUTH_TOKEN')
