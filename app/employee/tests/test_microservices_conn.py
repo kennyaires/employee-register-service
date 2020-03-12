@@ -7,7 +7,7 @@ class MicroservicesTests(TestCase):
 
     def test_get_full_address_connection(self):
         """Test if microservice return full addres details from postal code"""
-        valid_postal_code = '09780-250'
+        valid_postal_code = '09780250'
         result = get_full_address(valid_postal_code)
         self.assertEqual((len(result) > 0), True)
 
