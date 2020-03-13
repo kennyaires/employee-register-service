@@ -27,3 +27,30 @@ Exemplo de requisição
     "state": "SP"
 }
 ```
+
+## Iniciando app local
+
+O app é dockerizado, portanto é preciso montar a imagem e rodar o comando docker-compose.
+
+Antes, é preciso configurar as variáveis de ambiente, criando um arquivo `variables.env` e inseri-las.
+```
+DB_HOST=db
+DB_NAME=app
+DB_USER=postgres
+DB_PASS=supersecretpassword
+SECRET_KEY=SECRETHASH
+ADDRESS_SERVICE_AUTH_TOKEN=JWTOKEN-PAST-HERE
+```
+
+Depois montamos a imagem e iniciamos o app, na raiz do projeto:
+```
+docker build .
+docker-compose up --build
+```
+O acesso estará disponível na porta 8000 do localhost
+
+A aplicação é coberta de testes e  usado o lint flake8 para python, para rodá-los:
+```
+docker-compose run --rm app sh -c "python manage.py test && flake8"
+```
+Este comando utilizado pelo travis-ci após cada `push` ao repositório.
