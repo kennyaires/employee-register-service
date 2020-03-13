@@ -53,4 +53,4 @@ A aplicação é coberta de testes e  usado o lint flake8 para python, para rod�
 ```
 docker-compose run --rm app sh -c "python manage.py test && flake8"
 ```
-Este comando utilizado pelo travis-ci após cada `push` ao repositório.
+Este comando é utilizado pelo travis-ci após cada `push` ao repositório.
